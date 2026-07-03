@@ -41,6 +41,12 @@ In the **📊 Data** tab, **Download Excel template** now gives you the full rea
 OIC dataset (sheet `data`) plus a `sources` sheet. Edit it, or replace the numbers with your
 own, and upload it back. A ready copy is also bundled at `data/mlcw_53countries.xlsx`.
 
+## Upload-first: your data is the input
+The app opens on an **upload screen** — your indicator data (Excel or CSV) is the input.
+Download the template (pre-filled with 53 OIC economies as an example), replace the numbers
+with your own economies/units, and upload it. A **Load sample dataset** button is also
+available if you just want to explore first. The bundled Excel samples live in `data/`.
+
 ## Run locally
 ```bash
 pip install -r requirements.txt
@@ -49,6 +55,8 @@ streamlit run app.py
 Then open http://localhost:8501
 
 ## Deploy to Streamlit Community Cloud (free)
+> The app is **self-contained (no data file needed)** — the sample dataset is embedded in `app.py`, so deployment never fails on a missing file. Push `app.py`, `mlcw_core.py`, `report.py`, `llm_elicit.py`, `requirements.txt`, and `.streamlit/`.
+
 1. Push this folder to a public GitHub repo.
 2. On https://share.streamlit.io → **New app** → pick the repo → main file `app.py`.
 3. Deploy. (No secrets required for the core app.)
